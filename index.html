@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<body>
+<p>
+-Buat Sebuah function1 Yang eksekusinya ditunda di javascript 3 detik.<br/>
+-ubah function1 menggunakan callback.<br/>
+-ubah implementasi function1, dari callback menjadi promise.<br/>
+-ubah lagi menjadi async await.<br/>
+</p>
+
+<script>
+
+function consoleTimeOut(string){
+	setTimeout(
+      () => {
+       console.log(string);
+      }, 
+     3000
+    )
+}
+
+function consoleCallBack(string, callback){
+  return callback(string);
+}
+
+function consolePromise(callback){
+	new Promise(resolve => {
+    	    return resolve(callback);
+  	})
+}
+
+async function consoleAsync(promise){
+	return await consolePromise(promise);
+}
+const value = "A";
+consoleTimeOut(value);
+consoleCallBack(value, consoleTimeOut);
+consolePromise(consoleCallBack(value,consoleTimeOut));
+consoleAsync(consolePromise(consoleCallBack(value,consoleTimeOut)));
+</script>
+
+</body>
+</html>

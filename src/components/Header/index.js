@@ -1,43 +1,11 @@
-import React, { useState } from 'react';
-import { Drawer, Button } from 'antd';
-import { Link } from 'react-router-dom';
-import { withRouter } from "react-router";
-import LeftMenu from './LeftMenu';
-import RightMenu from './RightMenu';
-
-import './styles.css'
-
-function Header() {
-  const [ visible, setVisible ] = useState(false);
-
+export default function Header(props) {
+  const { title, linkTitle } = props;
   return (
-    <nav className="menuBar">
-      <div className="logo">
-        <Link to="/">logo</Link>
+    <div className="w-full px-5">
+      <div className="flex flex-wrap border-b-2 primary-text primary-border">
+        <div className="w-1/2">{title}</div>
+        <div className="w-1/2 text-right">{linkTitle}</div>
       </div>
-      <div className="menuCon">
-        <div className="leftMenu">
-          <LeftMenu theme="dark" />
-        </div>
-        <div className="rightMenu">
-          <RightMenu theme="dark" />
-        </div>
-        <Button className="barsMenu" type="primary" onClick={()=>setVisible(true)}>
-          <span className="barsBtn"></span>
-        </Button>
-        <Drawer
-          title="Basic Drawer"
-          placement="right"
-          closable={false}
-          onClose={()=>setVisible(false)}
-          visible={visible}
-        >
-          <LeftMenu theme="light"/>
-          <RightMenu theme="light"/>
-        </Drawer>
-      </div>
-    </nav>
+    </div>
   );
 }
-
-export default withRouter(Header)

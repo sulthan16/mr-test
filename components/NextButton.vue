@@ -1,0 +1,59 @@
+<template>
+  <button
+    @click="onClick"
+    class="
+      rounded-full
+      text-white
+      w-[113px]
+      h-[50px]
+      bg-green
+      relative
+      py-2
+      px-1.5
+      hover:bg-receipt
+      focus:outline-none focus:ring-2 focus:ring-green-600 focus:ring-opacity-50
+    "
+  >
+    <div class="flex flex-wrap items-center">
+      <span class="ml-4 my-1 font-medium text-base">NEXT</span>
+      <svg
+        class="ml-1.5"
+        width="33"
+        height="33"
+        viewBox="0 0 33 33"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <rect width="33" height="33" rx="16.5" fill="white" />
+        <g clip-path="url(#clip0_307:4301)">
+          <path
+            d="M21.2314 15.8522L13.0695 7.69298C12.7113 7.33574 12.1311 7.33574 11.772 7.69298C11.4139 8.05021 11.4139 8.63046 11.772 8.9877L19.2866 16.4996L11.7729 24.0114C11.4148 24.3687 11.4148 24.9489 11.7729 25.307C12.1311 25.6643 12.7122 25.6643 13.0704 25.307L21.2323 17.1478C21.585 16.7942 21.585 16.2049 21.2314 15.8522Z"
+            fill="#8BAC3E"
+          />
+        </g>
+        <defs>
+          <clipPath id="clip0_307:4301">
+            <rect
+              width="18.15"
+              height="18.15"
+              fill="white"
+              transform="translate(7.42505 7.42505)"
+            />
+          </clipPath>
+        </defs>
+      </svg>
+    </div>
+  </button>
+</template>
+<script>
+export default {
+  name: 'NextButton',
+  props: {
+    onClick: {
+      type: Function,
+      default: () => null,
+      required: true,
+    },
+  },
+}
+</script>

@@ -49,7 +49,18 @@
 
       <div>
         <div class="flex items-center">
-          <button class="text-black w-[120px] h-[50px] relative py-2 px-1.5">
+          <button
+            class="
+              hidden
+              md:block
+              text-black
+              w-[120px]
+              h-[50px]
+              relative
+              py-2
+              px-1.5
+            "
+          >
             <div class="flex flex-wrap items-center">
               <span class="mx-auto text-sm font-medium">Masuk</span>
             </div>
